@@ -52,7 +52,7 @@ class reddit_post:
 if __name__ == '__main__':
     base_url = 'https://www.reddit.com/r/RPI/new.json'
     next_page_url = base_url
-    amount_back = dt.datetime.now().timestamp() - (30 * 86400)
+    amount_back = dt.datetime.now().timestamp() - (90 * 86400)
     write_to = 'comments.json'
     headers = {
     'User-Agent': 'student words getter by /u/elysianfyre'
