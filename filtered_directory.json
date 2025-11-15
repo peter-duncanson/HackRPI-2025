@@ -1,0 +1,259 @@
+{
+    "negative": {
+        "academic": [
+            "difficult",
+            "hard",
+            "problem",
+            "tough",
+            "struggle",
+            "pressure",
+            "difficulty",
+            "distractions",
+            "struggled",
+            "slack"
+        ],
+        "actions": [
+            "risk",
+            "fired",
+            "dont",
+            "broke",
+            "outed",
+            "miss",
+            "removed",
+            "hurt",
+            "kicked",
+            "deleted"
+        ],
+        "items": [
+            "mice",
+            "bomb",
+            "tilted",
+            "fungus",
+            "rats",
+            "rodent"
+        ],
+        "other": [
+            "bad",
+            "less",
+            "issues",
+            "harder",
+            "down",
+            "lost",
+            "stress",
+            "worst",
+            "terrible",
+            "missing"
+        ],
+        "people": [
+            "nobody",
+            "aiders",
+            "panhandlers",
+            "commies",
+            "inconsiderate",
+            "offenders",
+            "obody"
+        ],
+        "places": [
+            "overcrowding",
+            "crowded",
+            "dump",
+            "cramped",
+            "prison",
+            "cell"
+        ],
+        "resources": [
+            "tuition",
+            "housing"
+        ],
+        "social": [
+            "alone",
+            "dry",
+            "bored",
+            "pissed",
+            "upsetting",
+            "downvoted",
+            "embarrassing",
+            "drunken",
+            "aggressive",
+            "rude"
+        ]
+    },
+    "neutral": {
+        "academic": [
+            "semester",
+            "class",
+            "program",
+            "college",
+            "classes",
+            "course",
+            "research",
+            "questions",
+            "project",
+            "rch"
+        ],
+        "actions": [
+            "have",
+            "going",
+            "want",
+            "say",
+            "change",
+            "took",
+            "make",
+            "work",
+            "made",
+            "used"
+        ],
+        "items": [
+            "hat",
+            "tickets",
+            "money",
+            "food",
+            "software",
+            "bike",
+            "bed",
+            "data",
+            "mail",
+            "packages"
+        ],
+        "other": [
+            "more",
+            "from",
+            "out",
+            "how",
+            "also",
+            "should",
+            "what",
+            "now",
+            "first",
+            "way"
+        ],
+        "people": [
+            "students",
+            "people",
+            "team",
+            "student",
+            "band",
+            "roy",
+            "professor",
+            "someone",
+            "coach",
+            "him"
+        ],
+        "places": [
+            "nion",
+            "school",
+            "rpi",
+            "room",
+            "campus",
+            "larkson",
+            "home",
+            "house",
+            "place",
+            "office"
+        ],
+        "resources": [
+            "system",
+            "email",
+            "services",
+            "parking",
+            "credit",
+            "info",
+            "advice",
+            "government",
+            "anner",
+            "wikipedia"
+        ],
+        "social": [
+            "game",
+            "hockey",
+            "games",
+            "hey",
+            "group",
+            "lunch",
+            "lol",
+            "rivalry",
+            "football",
+            "sports"
+        ]
+    },
+    "positive": {
+        "academic": [
+            "goal",
+            "high",
+            "learning",
+            "understanding",
+            "lead",
+            "understand",
+            "learn",
+            "easy",
+            "championship",
+            "accepted"
+        ],
+        "actions": [
+            "recommend",
+            "help",
+            "working",
+            "fix",
+            "fixed",
+            "win",
+            "improve",
+            "fixing",
+            "support",
+            "scored"
+        ],
+        "items": [
+            "mores",
+            "chilli",
+            "burgers"
+        ],
+        "other": [
+            "good",
+            "right",
+            "free",
+            "experience",
+            "better",
+            "great",
+            "easier",
+            "able",
+            "interested",
+            "love"
+        ],
+        "people": [
+            "friends",
+            "tutors",
+            "friend",
+            "master",
+            "utors",
+            "bff",
+            "star",
+            "tars",
+            "stars",
+            "mentor"
+        ],
+        "places": [],
+        "resources": [
+            "aid",
+            "tutoring",
+            "power",
+            "scholarship",
+            "successcenter",
+            "opportunities",
+            "counseling",
+            "recommendations",
+            "tips",
+            "resource"
+        ],
+        "social": [
+            "pep",
+            "hanks",
+            "community",
+            "fun",
+            "hangout",
+            "confidential",
+            "spirit",
+            "willing",
+            "together",
+            "bonfire"
+        ]
+    }
+}
