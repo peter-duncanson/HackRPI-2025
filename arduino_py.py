@@ -11,6 +11,7 @@ try:
             line = ser.readline().decode("utf-8").strip()
             print(f"Recieved from Arduino: {line}")
             data = line
+            
 except KeyboardInterrupt:
     print("Exiting Program")
 finally:
@@ -20,3 +21,19 @@ print("")
 print("")
 print("Morse code collected: ")
 print(line)
+
+# positive -> '.'
+    # 1 -> '.'
+    # 2 -> '-'
+    # 3 -> '.-'
+    # 4 -> '-.'
+    # 5 -> '..'
+    # 6 -> '--'
+    # 7 -> '.--'
+    # 8 -> '..-'
+    # 9 -> '...'
+    #10 -> '---'
+
+# negative -> '-'
+# mixed -> '.-'
+# back -> '....'
