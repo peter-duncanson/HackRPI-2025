@@ -5,8 +5,11 @@ String message = "";
 void setup() {
   Serial.begin(9600);
   pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
   pinMode(7, INPUT);
+  pinMode(4, OUTPUT);
   Serial.println("Hello World!");
+  digitalWrite(4, HIGH);
 
 }
 
@@ -27,8 +30,13 @@ String modify(String user_input, int time_on, int time_off){
 
 void loop() {
   delay(1);
+  while(!Serial.available()){
+  if(digitalRead(9)){
+    message = "";
+  }
   while(digitalRead(8)){
     digitalWrite(2, HIGH);
+    analogWrite(3, 50);
     if((offcount > 0) && (offcount < 15)){
       message += "";
     }
@@ -41,6 +49,7 @@ void loop() {
     Serial.println("offcount = " + String(offcount));
   }
   digitalWrite(2, LOW);
+  analogWrite(3, 0);
   if ((oncount > 0) && (oncount < 10)){
     message += ".";
   }
@@ -49,8 +58,14 @@ void loop() {
   }
   oncount = 0;
   offcount += 1;
-  Serial.println(message);
-  
-  
+  if (digitalRead(13)){
+      Serial.println(message);
+  }
 
+  }
+  if(Serial.available()){
+    message = "";
+    Serial.read();
+  }
+  
 }
