@@ -297,7 +297,7 @@ class menu:
         if not self.path:
             print('root')
         else:
-            path_str = " > ".join(self.path)
+            path_str = ' > '.join(self.path)
             print(f'root > {path_str}')
 
     def on_leaf(self):
@@ -311,7 +311,7 @@ class menu:
 
     def move_forward(self, choice):
         if self.on_leaf():
-            print('error, on leaf')
+            print('error: on leaf')
             return False
         
         if choice in self.current_position:
@@ -343,7 +343,7 @@ while navigating:
         if not current_options:
             print('error: nothing in that category')
         for i, word in enumerate(current_options, 1):
-            print(f"{commands_mapping[i]} {word}")
+            print(f'{commands_mapping[i]} {word}')
         choice = input('enter command: ').strip().lower()
         if choice == '....':
             test.move_back()
@@ -365,12 +365,12 @@ while navigating:
                 test.current_position = test.file_system
                 test.path = []
             else:
-                print('nothing in that position')
+                print('error: nothing in that position')
         except (ValueError, KeyError):
-            print('invalid command')
+            print('error: invalid command')
     else:
         for i, option_name in enumerate(current_options, 1):
-            print(f"{commands_mapping[i]} {option_name}")
+            print(f'{commands_mapping[i]} {option_name}')
         choice = input('enter command ').strip().lower()
         if choice == '....':
             test.move_back()
@@ -390,10 +390,10 @@ while navigating:
                 selected_key = current_options[choice_index] 
                 test.move_forward(selected_key)
             else:
-                print('nothing in that position')
+                print('error: nothing in that position')
         except (ValueError, KeyError):
             print('error')
 print()
 print('ended')
 if final_message_words:
-    print(f"output: {' '.join(final_message_words)}")
+    print(f'output: {' '.join(final_message_words)}')
