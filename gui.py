@@ -197,7 +197,6 @@ class MorseTerminalApp:
                 self.animate_ascii(self.hackrpi_art())
                 return
 
-
         if choice == '...---...':
             self.show_help()
             return
@@ -308,22 +307,14 @@ commands:
         ]
 
     def hackrpi_art(self):
-        width = self.options_display.winfo_width() or 80
-        lines = [
-            "H   H   AAAAA   CCCCC  K   K       RRRR   PPPP    I",
-            "H   H   A   A   C      K  K        R   R  P   P   I",
-            "HHHHH   AAAAA   C      KKK         RRRR   PPPP    I",
-            "H   H   A   A   C      K  K        R R    P       I",
-            "H   H   A   A   CCCCC  K   K       R  R   P       I"
+
+        return [
+        "H   H AAAAA CCCCC K   K    RRRR  PPPP  I",
+        "H   H A   A C     K  K     R   R P   P I",
+        "HHHHH AAAAA C     KKK      RRRR  PPPP  I",
+        "H   H A   A C     K  K     R R   P     I",
+        "H   H A   A CCCCC K   K    R  R  P     I"
         ]
-        padded_lines = []
-        for line in lines:
-            if len(line) < width:
-                space = (width - len(line)) // 2
-                padded_lines.append(" " * space + line)
-            else:
-                padded_lines.append(line)
-        return padded_lines
 
 
 
