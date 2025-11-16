@@ -10,18 +10,14 @@ class MorseTerminalApp:
         self.current_morse = ""
         self.final_message_words = []
         self.menu_system = menu(WORDS_DICT)
-
         self.showing_interpretation = False
-        self.showing_help = False  # NEW: separate flag for help
-
-        # --- Path label (row 0) ---
+        self.showing_help = False 
         self.path_label = tk.Label(
             root, text="root", font=("Courier", 24),
             fg="lime", bg="black", anchor="w"
         )
         self.path_label.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
 
-        # --- Options display (row 1) ---
         self.options_display = tk.Text(
             root, width=60, font=("Courier", 34),
             bg="black", fg="lime", insertbackground="lime",
@@ -29,8 +25,6 @@ class MorseTerminalApp:
         )
         self.options_display.config(state=tk.DISABLED)
         self.options_display.grid(row=1, column=0, sticky="nsew", padx=5, pady=5)
-
-        # --- Bottom panel (row 2) ---
         self.bottom_frame = tk.Frame(root, bg="black")
         self.bottom_frame.grid(row=2, column=0, sticky="ew", padx=5, pady=5)
 
@@ -52,12 +46,8 @@ class MorseTerminalApp:
             fg="cyan", bg="black", anchor="w"
         )
         self.morse_label.pack(fill="x")
-
-        # --- Grid weights to make options display expand ---
         root.grid_rowconfigure(1, weight=1)
         root.grid_columnconfigure(0, weight=1)
-
-        # --- Key bindings ---
         root.bind(".", lambda e: self.add_symbol("."))
         root.bind("-", lambda e: self.add_symbol("-"))
         root.bind("<Return>", lambda e: self.submit_morse())
@@ -67,7 +57,6 @@ class MorseTerminalApp:
         self.blink_cursor()
         self.update_display()
 
-    # --- Morse input methods ---
     def add_symbol(self, symbol):
         self.current_morse += symbol
         self.update_morse_label()
@@ -85,16 +74,13 @@ class MorseTerminalApp:
         self.update_morse_label()
         self.root.after(500, self.blink_cursor)
 
-    # --- Menu logic ---
     def submit_morse(self):
-        # --- EXIT HELP ---
         if self.showing_help:
             self.interpreted_label.config(text="")
             self.showing_help = False
             self.update_display()
             return
 
-        # --- EXIT INTERPRETATION ---
         elif self.showing_interpretation:
             self.menu_system.current_position = self.menu_system.file_system
             self.menu_system.path = []
@@ -103,7 +89,6 @@ class MorseTerminalApp:
             self.update_display()
             return
 
-        # --- PROCESS MORSE INPUT ---
         choice = self.current_morse
         self.current_morse = ""
         self.update_morse_label()
@@ -140,7 +125,6 @@ class MorseTerminalApp:
 
         self.update_display()
 
-    # --- Help interface ---
     def show_help(self):
         help_text = """
 commands:
@@ -151,7 +135,6 @@ commands:
         self.interpreted_label.config(text=help_text)
         self.showing_help = True
 
-    # --- Display update ---
     def update_display(self):
         path_str = "root" if not self.menu_system.path else "root > " + " > ".join(self.menu_system.path)
         self.path_label.config(text=path_str)
