@@ -8,24 +8,8 @@ void setup() {
   pinMode(3, OUTPUT);
   pinMode(7, INPUT);
   pinMode(4, OUTPUT);
-  Serial.println("Hello World!");
   digitalWrite(4, HIGH);
 
-}
-
-String modify(String user_input, int time_on, int time_off){
-  if((offcount > 0) && (offcount < 10)){
-    return user_input + " ";
-  }
-  if(offcount > 30){
-    return user_input + " / ";
-  }
-  if ((oncount > 0) && (oncount < 10)){
-    return user_input + ".";
-  }
-  if ((oncount > 10) && (oncount < 30)){
-    return user_input + "-";
-  }
 }
 
 void loop() {
@@ -39,9 +23,6 @@ void loop() {
     analogWrite(3, 50);
     if((offcount > 0) && (offcount < 15)){
       message += "";
-    }
-    if(offcount > 15){
-      message += " ";
     }
     oncount += 1;
     offcount = 0;

@@ -1,3 +1,6 @@
+import serial
+import time
+
 words = {
     'negative': {
         'academic': [
@@ -287,6 +290,21 @@ commands_mapping = {
     10: '---'
 }
 
+def get_input():
+    ser = serial.Serial("COM5", 9600, timeout = 1)
+    time.sleep(2)
+    try:
+        while True:
+            if ser.in_waiting > 0:
+                line = ser.readline().decode("utf-8").strip()
+                print(line)
+                
+    except KeyboardInterrupt:
+        print("Exiting Program")
+    finally:
+        ser.close()
+    return line
+
 class menu:
     def __init__(self, file_system):
         self.file_system = file_system
@@ -344,7 +362,7 @@ while navigating:
             print('error: nothing in that category')
         for i, word in enumerate(current_options, 1):
             print(f'{commands_mapping[i]} {word}')
-        choice = input('enter command: ').strip().lower()
+        choice = get_input().replace(" ", "")
         if choice == '....':
             test.move_back()
             continue
@@ -371,7 +389,7 @@ while navigating:
     else:
         for i, option_name in enumerate(current_options, 1):
             print(f'{commands_mapping[i]} {option_name}')
-        choice = input('enter command ').strip().lower()
+        choice = get_input().replace(" ","")
         if choice == '....':
             test.move_back()
             continue
